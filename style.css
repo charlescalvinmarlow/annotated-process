@@ -1,0 +1,52 @@
+body {
+    margin: 0;
+    padding: 0;
+}
+
+main {
+    display: grid;
+    grid-template-columns: 200px auto;
+    column-gap: 40px;
+}
+
+img {
+    max-width: 80vw;
+}
+
+#tags-wrapper {
+    grid-column: 2 / 3;
+}
+
+#nav-container {
+    grid-column: 2 / 3;
+}
+
+#css-selector {
+    background: rgb(25, 25, 30);
+    grid-row: 1 / 20;
+    position: relative;
+    top: 0;
+    font-family: monospace;
+    border: 1px solid rgb(255, 166, 0);
+}
+
+#css-selector p {
+    padding: 8px;
+    margin: 0 10px;
+    position: sticky;
+    &:first-of-type {
+        margin-top: 50px;
+    }
+}
+
+#noCSS {
+    top: 50px;
+}
+
+#legibleCSS {
+    top: 84px;
+}
+
+#fullCSS {
+    top: 118px;
+}

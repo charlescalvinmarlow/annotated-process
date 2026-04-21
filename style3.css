@@ -1,0 +1,512 @@
+/* SIMPLE LEGIBILITY CSS */
+
+*{
+    margin: 0;
+    padding: 0;
+}
+
+a {
+    text-decoration: none;
+}
+
+ul {
+    margin: 0;
+    padding:0;
+}
+
+img {
+    max-width: 100%;
+}
+
+/* scroll behaviour */
+html {
+    scroll-behavior: smooth;
+}
+
+.anchor, .experiment {
+    scroll-margin-top: 100px;
+}
+
+/* variables */
+
+:root {
+    --text-color: rgb(255, 166, 0);
+    --crt-red: rgb(218, 49, 49);
+    --crt-green: rgb(112, 159, 115);
+    --crt-blue: rgb(40, 129, 206);
+}
+
+
+
+/* body */
+body {
+    font-family: monospace;
+    color: var(--text-color);
+    font-weight: 100;
+    font-size: 14px;
+        /* crt effect code credit to https://codepen.io/thisanimus/pen/OJpaqWz */
+    background-color: rgb(25, 25, 30);
+  text-shadow: 0 0 0.2em currentColor, 0.5px 0.5px rgba(255, 0, 255, 0.2),
+    -0.5px -0.5px rgba(0, 255, 255, 0.2);
+  position: relative;
+  &:before,
+  &:after {
+    content: "";
+    transform: translateZ(0);
+    pointer-events: none;
+    opacity: 0.3;
+    mix-blend-mode: overlay;
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    left: 0;
+    top: 0;
+    z-index: 1;
+    }
+    &:before {
+    background: url("images/vertical_grad.svg");
+  }
+  &:after {
+    background: url("images/horiz_grad.svg");
+  }
+  /* end crt effect code */
+}
+
+h1 {
+    font-weight: 100;
+    font-size: 3.5em;
+    max-width: 630px;
+}
+
+h2 {
+    font-weight: 100;
+    margin-bottom: 40px;
+}
+
+.cursor-anim::after, .experiment h4::after {
+    content:"_";
+    display: inline-block;
+    animation: blinkTextCursor 500ms infinite normal;
+}
+
+/* h2, h3 ,h4, h5, p, figcaption, .tags-div, nav, #tags-wrapper {
+    max-width: 630px;
+    margin: 0 auto;
+} */
+
+main {
+    padding: 0 15px;
+    max-width: 1040px;
+    margin: 0 auto;
+    display: grid;
+    column-gap: 30px;
+    grid-template-columns: 200px 630px 150px;
+}
+
+/* grid */
+
+header {
+    position: fixed;  
+    margin: 10px auto 0;
+    display: grid;
+    column-gap: 30px;
+    grid-template-columns: 200px 630px 150px;
+}
+
+header p {
+    text-align: center;
+}
+
+#thirdCol {
+    grid-column: 3 / 4;
+}
+
+#nav-container {
+    grid-column: 1 / 2;
+    grid-row: 3 / 100;
+}
+
+#tags-wrapper {
+    grid-column: 3 / 4;
+    grid-row: 2 / 100;
+}
+
+/* tags styling */
+
+#tags-wrapper {
+    /* position: relative;
+    right: -710px;
+    top: -110px; */
+    /* height: 17000px; */
+    display: inline-block;
+}
+
+#tags-div {
+    position: sticky;
+    top: 150px;
+    display: flex;
+    flex-direction: column;
+    width: 130px;
+    border: 1px solid var(--text-color);
+    padding: 5px;
+}
+
+#tags-div h5 {
+    font-size: 1em;
+    font-weight: 500;
+    margin: 0;
+    padding: 6px 10px;
+    border: 1px solid var(--text-color);
+
+}
+
+#tags-div ul {
+    width: 100%;
+    cursor: pointer;
+}
+
+a img:hover {
+    opacity: 70%;
+    
+}
+
+.tags li {
+    display: inline-block;
+    padding: 6px 10px;
+    width: 80%;
+}
+
+#tags-div li:hover {
+    color: #000;
+    background: var(--text-color);
+    animation: blinkTextCursor 0.3s ease-out 1;
+    filter: blur(0.5px);
+}
+
+/* anchor/experiment tags */
+
+.tags-div ul {
+    display: flex;
+    justify-content: space-between;
+}
+
+.tags-div li {
+    border: 1px solid var(--text-color);
+}
+
+/* tag highlighting styles */
+
+.highlighted {
+    background: var(--text-color);
+    animation: blinkTextCursor 500ms infinite normal;
+    color: #000;
+}
+
+.highlighted a {
+    color: #000;
+}
+
+.highlighted:hover {
+    animation: none;
+}
+
+/* experiment styling */
+
+.experiment {
+    margin-bottom: 250px;
+}
+
+.experiment .title-container {
+    margin: 0 0 60px 0;
+}
+
+.experiment h4 {
+    font-size: 2.4em;
+    font-weight: 300;
+}
+
+.experiment figure {
+    margin-bottom: 40px;
+    border: 1px solid var(--text-color);
+}
+
+.experiment p {
+    margin-bottom: 20px;
+}
+
+.experiment h5{
+    font-size: 1em;
+    font-weight: 100;
+    margin-bottom: 20px;
+}
+
+.aims, .reflection, .next {
+    margin-bottom: 50px;
+}
+
+.aims ul {
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+    flex-basis: auto;
+}
+
+.aims li {
+    padding: 15px;
+    border: 1px solid var(--text-color);
+    font-size: 1.2em;
+    width: 28%;
+    line-height: 1.4;
+}
+
+
+#hidden-life iframe {
+    background: #fff;
+}
+
+/* figure styling */
+
+#game-of-life iframe, #instagram-tiles iframe {
+    display: block;
+    margin: 0 auto;
+}
+
+#game-of-life iframe {
+    max-width: 830px;
+}
+
+p {
+    line-height: 1.5;
+}
+
+figure {
+    position: relative;
+}
+
+.iframe::before {
+    content: 'interactive';
+    position: absolute;
+    top: 6px;
+    left: 6px;
+    padding: 6px;
+    border: 1px solid var(--text-color);
+    background: rgb(25, 25, 30);
+}
+
+.iframe:hover::before {
+    opacity: 0.3;
+    transition: opacity 200ms ease-out;
+}
+
+.smallFigure {
+    max-width: 500px;
+    margin: 50px auto;
+}
+
+/* nav styling */
+nav {
+    position: sticky;
+    top: 150px;
+    max-width: 200px;
+    border: 1px solid var(--text-color);
+    padding: 5px;
+    font-size: 0.9em;
+}
+
+#nav-container {
+    /* position: relative;
+    left: -300px;
+    top: 200px; */
+    /* height: 17000px; */
+    display: inline-block;
+}
+
+nav li {
+    list-style: none;
+    height: 50px;
+    padding: 0 4px;
+    margin: 2px 0;
+}
+
+nav h3 {
+    font-size: 1em;
+    font-weight: 500;
+    margin: 0 0 15px 0;
+    padding: 6px 10px;
+    border: 1px solid var(--text-color);
+}
+
+nav a {
+    color: var(--text-color);
+}
+
+nav li:hover {
+    color: #000;
+    animation: blinkTextCursor 0.3s ease-out 1;
+    background: var(--text-color);
+    filter: blur(0.5px);
+}
+
+nav li:hover a {
+    color: #000;
+}
+
+.nav-anchor::before, .nav-experiment::before {
+    border: 1px solid var(--text-color);
+    padding: 5px;
+    float: right;
+    margin-left: 5px;
+}
+
+.nav-anchor::before {
+    content: "anc";
+
+}
+
+.nav-experiment::before {
+    content: "exp";
+}
+
+/* content styling */
+.title-container {
+    display: flex;
+    justify-content: space-between;
+}
+
+#hero {
+    margin: 200px 0;
+}
+
+    /* overview map styling */
+
+#overview {
+    margin-bottom: 200px;
+}
+
+#overview h2 {
+    margin-top: 100px;
+    margin-bottom: 50px;
+    font-size: 2em;
+    font-weight: 100;
+}
+
+#overview p {
+    margin: 50px 0;
+    font-size: 1.2em;
+}
+
+/* anchor styling */
+.anchor {
+    border: 1px solid var(--text-color);
+    max-width: 630px;
+    margin-bottom: 250px;
+}
+
+a:visited {
+  color: inherit;
+}
+
+.anchor .title-container {
+    background: var(--text-color);
+}
+
+.anchor .title-container {
+    color: #000;
+    font-size: 1em;
+    font-weight: 200;
+}
+
+.anchor h4, .anchor p {
+    padding: 6px;
+    font-weight: 100;
+    font-size: 1.4em;
+}
+
+.anchor a, .experiment a {
+    text-decoration: underline;
+    &:hover {
+        opacity: 0.7;
+    }
+}
+
+figure {
+    width: 100%;
+}
+
+.anchor img, .anchor iframe {
+    border-top: 1px solid var(--text-color);
+    border-left: none;
+    border-right: none;
+    border-bottom: 1px solid var(--text-color);
+    width: 100%;
+}
+
+.experiment img, .experiment iframe {
+    border: 1px solid var(--text-color);
+    width: 100%;
+}
+
+figcaption {
+    padding: 6px;
+    border-bottom: 1px solid var(--text-color);
+}
+
+blockquote {
+    margin: 30px 0;
+    padding: 6px;
+}
+
+footer {
+    margin: 100px 0;
+}
+
+/* .data-size {
+    font-family: monospace;
+    color: green;
+} */
+
+/* fix words embed */
+
+#words iframe {
+    background: rgb(25, 25, 30);
+}
+
+/* double layout */
+/* .double {
+    display: flex;
+}
+
+.duo-inner {
+    max-width: 45%;
+    margin: 0 10px;
+} */
+
+@keyframes blinkTextCursor {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* code for small screen warning */
+#smallScreen {
+    display: none;
+}
+
+@media (width <= 1050px) {
+    #smallScreen {
+        display: flex;
+        position: fixed;
+        width: 100vw;
+        height: 100vh;
+        background: #000000cc;
+        z-index: 10;
+    }
+    #smallScreen h2 {
+        display: block;
+        margin: auto;
+        padding: 50px;
+    }
+}
