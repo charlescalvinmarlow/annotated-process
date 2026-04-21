@@ -15,7 +15,7 @@ ul {
 }
 
 img {
-    max-width: 100%;
+    max-width: 99.9%;
 }
 
 /* scroll behaviour */
@@ -438,12 +438,12 @@ figure {
     border-left: none;
     border-right: none;
     border-bottom: 1px solid var(--text-color);
-    width: 100%;
+    width: 99.9%;
 }
 
 .experiment img, .experiment iframe {
     border: 1px solid var(--text-color);
-    width: 100%;
+    width: 99.8%;
 }
 
 figcaption {
