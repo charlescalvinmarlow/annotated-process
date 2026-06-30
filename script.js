@@ -66,7 +66,8 @@ function loadScript() {
         cssState.setAttribute("href", "style2.css");
     } else if (localStorage.getItem('style') === '3') {
         cssState.setAttribute("href", "style3.css");
-    }
+    } else {
+        cssState.setAttribute("href", "style3.css");
 };
 //run loadScript function
 loadScript();
